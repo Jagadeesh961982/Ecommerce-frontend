@@ -1,0 +1,273 @@
+.productDetails{
+    background-color:white;
+    box-sizing: border-box;
+    padding:7vmax;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+ }
+
+ .carouselContainer {
+    background-color: white;
+    width: 40%;
+    margin-right: 3rem;
+    z-index: 5;
+
+}
+.carouselContainer img{
+    width: 100%;
+    height: 100%;
+    
+ }
+
+.productInfo {
+    width: 70%; 
+    height: 100%;
+    padding: 2vmax;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    
+    
+
+}
+
+.productInfoBl-1{
+    border-bottom: 1px solid rgba(0,0,0,0.256);
+    width: 70%;
+    padding: 1vmax;
+
+}
+
+.productInfoBl-2{
+    border-bottom: 1px solid rgba(0,0,0,0.256);
+    width: 70%;
+    padding: 1vmax;
+    display: flex;
+    flex-direction: column;
+    gap: 1vmax;
+
+}
+
+.productInfoBl-3{
+    border-bottom: 1px solid rgba(0,0,0,0.256);
+    width: 70%;
+    padding: 1vmax;
+    display: flex;
+    flex-direction: column;
+    gap: 1vmax;
+}
+
+.productInfoBl-3-1{
+    display: flex;
+    align-items: center;
+
+}
+
+.productInfoBl-3-1-1{
+  padding-right: 3vmax;
+}
+.productInfoBl-3-1-1 > input{
+    border: none;
+    padding: 0.5vmax;
+    width: 1vmax;
+    text-align: center;
+    outline: none;
+    font: 400 1vmax "Roboto";
+    color: rgba(0, 0, 0, 0.74);
+}
+
+.productInfoBl-3-1-1 > button{
+    border: none;
+    background-color: rgba(0, 0, 0, 0.616);
+    padding: 0.5vmax;
+    cursor: pointer;
+    color: white;
+    transition: all 0.5s;
+    
+}
+
+.productInfoBl-3-1 > button{
+    background-color: tomato;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 0.5vmax 2vmax;
+    cursor: pointer;
+
+}
+
+.productInfoBl-3-1 > button:hover{
+  background-color: rgb(214, 84, 61);
+}
+
+.productInfoBl-4{
+  padding: 1vmax;
+  display: flex;
+  flex-direction: column;
+  gap: 1vmax;
+}
+
+.productInfoBl-4 > h1{
+  font: 500 1.8vmax serif;
+}
+
+.productInfoBl-4 > p{
+  font: 300 1vmax cursive;
+}
+
+.productInfoBl-4 > button{
+  background-color: tomato;
+  padding: 1vmax 2vmax;
+  color: white;
+  border: none;
+  width: 10vmax;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.productInfoBl-4 > button:hover{
+  background-color: rgb(214, 84, 61);
+}
+
+.submitDialog{
+  display: flex;
+  flex-direction: column;
+}
+
+.submitDialogTextArea{
+  border: 1px solid rgba(0,0,0,0.082);
+  margin: 1vmax 0;
+  outline: none;
+}
+
+.reviewHeading h2{
+    text-align: center;
+    font:500 1.4vmax "Roboto", sans-serif;
+    border-bottom:1px solid rgba(0,0,0,0.226) ;
+}
+.reviews{
+    display: flex;
+    overflow: auto;
+}
+.reviewCard{
+    flex: none;
+    box-shadow: 0 0 5px rgba(0,0,0,0.266);
+    border:1px solid rgba(56,56,56,0.116);
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1vmax;
+    padding: 3vmax;
+}
+
+.reviewCard img{
+    width: 4vmax;
+    height: 4vmax;
+}
+
+.reviewCard p{
+    color: rgba(0,0,0,0.836);
+    font:600 0.9vmax "Roboto", sans-serif;
+}
+
+.reviewCardComment{
+    color: rgba(0,0,0,0.445);
+    font: 300 0.8vmax cursive;
+}
+
+
+.noReviews{
+    font: 400 1.3vmax "Gill Sans", sans-serif;
+    text-align: center;
+    color: rgba(0,0,0,0.548);
+}
+
+
+@media screen and (max-width: 660px) {
+    .productDetails {
+      flex-direction: column;
+      height: unset;
+    }
+  
+    .productDetails > div:last-child {
+      align-items: center;
+    }
+  
+    .productInfoBl-1 > h2 {
+      font-size: 2.8vmax;
+      text-align: center;
+    }
+  
+    .productInfoBl-1 > p {
+      text-align: center;
+      font-size: 1vmax;
+    }
+  
+    .productInfoBl-2 {
+      justify-content: center;
+    }
+    .productInfoBl-2 > span {
+      font-size: 1.5vmax;
+    }
+  
+    .productInfoBl-3 > h3 {
+      font: 700 3vmax "Franklin Gothic Medium";
+      text-align: center;
+    }
+  
+    .productInfoBl-3-1 {
+      flex-direction: column;
+    }
+  
+    .productInfoBl-3-1-1 {
+      padding: 2vmax 0;
+    }
+    .productInfoBl-3-1-1 > button {
+      padding: 1.2vmax;
+      width: 4vmax;
+    }
+  
+    .productInfoBl-3-1-1 > input {
+      padding: 1.5vmax;
+      width: 3vmax;
+      font: 400 1.8vmax "Roboto";
+    }
+  
+    .productInfoBl-3-1 > button:last-child {
+      font: 500 1.7vmax "Roboto";
+      padding: 1.5vmax;
+      width: 20vmax;
+      margin: 3vmax 0;
+    }
+  
+    .productInfoBl-3 > p {
+      padding: 2.5vmax 0;
+      text-align: center;
+      font: 400 2vmax "Roboto",sans-serif;
+    }
+  
+    .productInfoBl-4 {
+      font: 500 2.5vmax sans-serif;
+    }
+  
+    .productInfoBl-4 > p {
+      font: 300 1.8vmax sans-serif;
+    }
+  
+    .productInfoBl-4 > button {
+      font: 500 1.7vmax "Roboto", sans-serif;
+      padding: 1.5vmax;
+      width: 20vmax;
+      margin: 3vmax 0;
+    }
+  
+    .reviewCard > p {
+      font: 600 3vw "Roboto";
+    }
+    .reviewCardComment {
+      font: 300 5vw cursive;
+    }
+  }

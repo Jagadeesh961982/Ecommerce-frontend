@@ -1,0 +1,117 @@
+.contactContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100vw;
+    height: 100vh;
+    background-color: rgb(154, 214, 238);
+
+}
+
+.contactBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    min-height: 50%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.contactBox > svg{
+    font-size: 2.5vmax;
+    color: tomato;
+    padding-top: 1vmax;
+    padding-bottom: 0.5vmax;
+}
+
+.contactBox > h2{
+    font: 600 1.5em 'Roboto';
+}
+
+.contactBox > span{
+    font: 100 0.8rem 'sans-serif';
+    color: rgba(0, 0, 0, 0.5);
+    padding-bottom: 1.5vmax;
+}
+
+.contactForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+
+.formGroup{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 1.5vmax;
+}
+
+.formGroup > label{
+    font: 500 1rem 'Roboto';
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0.5vmax;
+}
+
+.formGroup > input,
+.formGroup > textarea{
+    font: 300 1rem 'sans-serif';
+    padding: 0.5vmax;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    width: 100%;
+}
+
+.formGroup > textarea{
+    resize: none;
+    height: 2vmax;
+}
+
+.contactBtn{
+    font: 500 1rem 'Roboto';
+    padding: 0.5vmax;
+    border: none;
+    border-radius: 5px;
+    background-color: tomato;
+    color: #fff;
+    width: 60%;
+    cursor: pointer;
+    transition: all 0.5s;
+    margin-bottom: 1vmax;
+}
+
+.contactBtn:hover{
+    background-color: rgba(255, 99, 71, 0.8);
+}
+
+.contactForm > span {
+    font: 300 0.8rem 'sans-serif';
+    color: rgba(0, 0, 0, 0.5);
+    padding-top: 0.2vmax;
+}
+
+.contactForm > span:last-child{
+    padding-bottom: 1.5vmax;
+}
+
+.contactForm > span > a{
+    color: rgb(213, 111, 93);
+    text-decoration: none;
+}
+
+@media screen and (max-width: 660px){
+    .contactBox{
+        width: 90%;
+    }
+    .contactForm{
+        width: 90%;
+    }
+    .contactBtn{
+        width: 80%;
+    }
+}
+

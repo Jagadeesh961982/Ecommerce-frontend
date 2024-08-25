@@ -1,0 +1,70 @@
+.adminDashboard{
+    text-decoration: none;
+    list-style: none;
+    padding-left: 0;
+    /* list-style-type: none; */
+}
+
+.adimDashboard-child-2{
+    padding-left: 2vmax;
+}
+
+.sidebar{
+    background-color: rgb(255,255,255);
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 0;
+}
+
+.sidebar > a:first-child{
+    padding: 0;
+}
+
+.sidebar > a >img{
+    width: 100%;
+    transition: all 0.5s;
+}
+
+.sidebar > a > img:hover{
+    filter: drop-shadow(0 0 10px grey);
+}
+
+.sidebar a{
+    text-decoration: none;
+    color: rgba(0,0,0,0.563);
+    font: 200 1rem 'Roboto', sans-serif;
+    padding: 2rem;
+    transition: all 0.5s;
+    
+}
+
+.sidebar a:hover{
+    color: tomato;
+}
+
+.sidebar a  p{
+    display: flex;
+    align-items: center;
+}
+
+.sidebar a p > svg {
+    margin-right: 0.5rem;
+}
+
+/* .adminDashboard > div:first-child{
+    
+    display: flex;
+    align-items: center;
+} */
+
+
+
+/* .adimDashboard-child-2 > li >a{
+    display: flex;
+    align-items: center;
+} */
+
+/* a{
+    text-decoration: none;
+    color: black;
+} */

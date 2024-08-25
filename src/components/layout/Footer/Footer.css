@@ -1,0 +1,91 @@
+.footer{
+    /* position: absolute;
+    bottom: 0; */
+    margin-top: 2rem;
+    bottom: 0;
+    padding:2vmax;
+    background-color:rgb(34,33,33);
+    color: white;
+    display: flex; 
+    margin-bottom: -2vmax; 
+}
+
+.leftFooter{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.leftFooter h4{
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 1.4vmax;
+}
+
+.leftFooter p{
+    font-size: 1.2vmax;
+    text-align: center;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.appLogo{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+.appLogo img{
+    width: 10vmax;
+    margin-bottom: 0.5vmax;
+    cursor: pointer;
+}
+
+.middleFooter{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.middleFooter h1{
+    font-size: 4vmax;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    color: #eb4034;
+}
+
+.middleFooter p{
+    font-size: 1.5vmax;
+    max-width: 60%;
+    margin: 1vmax auto;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.rightFooter{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rightFooter h4{
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 1.4vmax;
+    text-decoration: underline;
+}
+
+.rightFooter a{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    margin: 0.5vmax;
+    transition: all 0.5s;
+    font-size: 1.2vmax;
+}
+
+.rightFooter a:hover{
+    color: #eb4034;
+}

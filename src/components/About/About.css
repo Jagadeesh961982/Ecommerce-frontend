@@ -1,0 +1,102 @@
+
+.aboutContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    margin: 1vmax auto;
+    height: 90vh;
+    max-height: 100%;
+    width: 90vw;
+    max-width: 100%;
+    box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+
+}
+
+.aboutContainer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../../images/galaxy.jpg') no-repeat center center/cover;
+    opacity: 0.3; /* Adjust opacity here */
+    z-index: -1; /* Send image behind the content */
+}
+
+.aboutSection{
+    width: 48%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.aboutSection:first-child{
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    justify-content: center; 
+
+}
+
+.aboutSection > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:0 auto;
+    padding: 2vmax 1vmax;
+    font-style: italic;
+}
+
+.aboutSection > div > h2{
+    font-size: 2.5vmax;
+    margin: 0;
+    padding: 0.1vmax;
+}
+
+.aboutSection > div > h3{
+    font-size: 2vmax;
+    margin: 0;
+    padding: 0.1vmax;
+}
+
+.aboutSection > div >p,
+.aboutSection > div > ul{
+    font: 100 0.9vmax 'Roboto', sans-serif;
+}
+
+.aboutSection:last-child{
+    border-left: 1px solid rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+}
+
+.profilePic{
+    width: 8vmax;
+    height: 8vmax;
+    border-radius: 50%;
+    display: block;
+    margin-top: 20px;
+    object-fit: cover;
+
+}
+
+.aboutSection:last-child > h3{
+    border-bottom: 1px solid rgba(0,0,0,0.4);
+}
+.aboutSection:last-child > ul{
+    list-style-type: none;
+    display: flex;
+    padding: 1vmax;
+    margin: 0;
+}
+
+.aboutSection:last-child > ul > li{
+    margin: 0 4px;
+}

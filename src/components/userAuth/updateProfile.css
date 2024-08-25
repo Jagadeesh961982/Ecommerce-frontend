@@ -1,0 +1,160 @@
+.updateProfileContainer{
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(231, 231, 231);
+    /* position: fixed; */
+    /* top: 0;
+    left: 0; */
+}
+
+.profileBox{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25vw;
+    height: 70vh;
+    box-sizing: border-box;
+    overflow: hidden;
+} 
+
+.profileUpdateHeading{
+    color: rgba(0, 0, 0, 0.664);
+    font: 400 1.3vmax "Roboto";
+    border-bottom: 1px solid rgba(0, 0, 0, 0.267);
+    padding: 1.3vmax;
+    margin: auto;
+}
+
+.profileForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height:70%;
+    margin: auto;
+    padding:2vmax;
+    transition: all 0.5s;
+
+
+}
+
+.profileForm div{
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+}
+
+.profileForm div input{
+    padding: 1vmax 4vmax;
+    padding-right: 1vmax;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    font: 300 0.9vmax cursive;
+    outline: none;
+}
+
+.profileForm div svg{
+    position: absolute;
+    transform: translateX(1vmax);
+    font-size: 1.6vmax;
+    color: rgba(0, 0, 0, 0.267);
+
+}
+
+.updateProfileBtn{
+    background-color: tomato;
+    color: white;
+    font: 300 0.9vmax 'Roboto', sans-serif;
+    padding:0.8vmax;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s;
+    border-radius: 4px;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.267);
+
+}
+
+.updateProfileBtn:hover{
+    background-color: rgba(255, 99, 71, 0.8);
+    transform: translateY(-0.5vmax);
+
+}
+
+#profileImage img{
+    width: 3vmax;
+    height: 3vmax;
+    border-radius: 100%;
+}
+#profileImage input{
+    display: flex;
+    padding: 0%;
+}
+
+#profileImage input::-webkit-file-upload-button{
+    cursor: pointer;
+    width: 100%;
+    z-index: 2;
+    height: 4vh;
+    border: none;
+    margin: 0%;
+    font: 400 0.8vmax cursive;
+    transition: all 0.5s;
+    padding: 0 1vmax;
+    color: rgba(0, 0, 0, 0.623);
+    background-color: rgb(255, 255, 255);
+}
+
+#profileImage input::-webkit-file-upload-button:hover{
+    background-color: rgb(231, 231, 231);
+}
+
+@media screen and (max-width:728px) {
+    .updateProfileContainer{
+        background-color: white;
+    }
+
+    .profileBox{
+        width: 100vw;
+        height: 95vh;
+    }
+
+    .profileForm{
+        padding: 5vmax;
+    }
+
+    .profileForm div input{
+        padding: 2.5vmax 5vmax;
+        font: 300 1.7vmax cursive;
+    }
+
+    .profileForm div svg{
+        font-size: 2.8vmax;
+    }
+    
+    #profileImage img{
+        width: 8vmax;
+        border-radius: 100%;
+    }
+
+    #profileImage input::-webkit-file-upload-button{
+        height: 7vh;
+        font: 400 1.8vmax cursive;
+    }
+
+    .updateProfileBtn{
+        padding: 1.8vmax;
+        font: 400 1.9vmax cursive;
+    }
+    
+    
+}
