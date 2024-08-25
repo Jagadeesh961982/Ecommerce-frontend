@@ -3,7 +3,7 @@ import { ALL_ORDERS_FAIL, ALL_ORDERS_REQUEST, ALL_ORDERS_SUCCESS, CLEAR_ERRORS, 
 import { isAction } from "@reduxjs/toolkit";
 import { getCartItems, removeAllItemsFromCart } from "./cartActions";
 
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 
 // cerate order

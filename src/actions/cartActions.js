@@ -3,7 +3,7 @@ import { ADD_TO_CART, ADD_TO_CART_FAIL, ADD_TO_CART_REQUEST, ADD_TO_CART_RESET, 
 import { toast } from "react-toastify";
 
 
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 // export const addItemToCart=(id,quantity)=>async(dispatch,getState)=>{
 //     const {data}=await axios.get(`${BASE_URL}/api/product/${id}`);
 //     dispatch({type:ADD_TO_CART,payload:{
