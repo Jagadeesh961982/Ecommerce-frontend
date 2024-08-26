@@ -13,7 +13,10 @@ import {toast} from "react-toastify";
 import { Dialog,DialogActions,DialogContent,DialogTitle,Button, Rating } from '@mui/material';
 import { ADD_TO_CART_RESET } from '../../constants/cartConstants.js';
 import { getMyorders } from '../../actions/orderAction.js';
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import React from "react";
+import Slider from "react-slick";
 
 const ProductDetails=()=>{
     const {id}=useParams();
@@ -27,6 +30,16 @@ const ProductDetails=()=>{
     const [rating,setRating]=useState(0)
     const [comment,setComment]=useState("")
     
+    var settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000 
+    };
+
     let isOrdered;
     if(orders){
       for(let order of orders){
@@ -147,19 +160,19 @@ const ProductDetails=()=>{
     (<>
       <MetaData title={`${product.name} --Ecommerce`} />
       <div className='productDetails'>
-  
-          {product.images &&
-            <div className='carouselContainer'>
-              <Carousel responsive={responsive} style={{zIndex:10}}>
-                  {product.images.map((image) => (
-                    <div key={image._id}>
-                      <img src={image.url} alt={product.name} className='carouselImg' />
-                    </div>
-                  ))}
-              </Carousel>
-            </div>
-          }
-          
+          <div className="carouselContainer">
+            {product.images &&
+              <Slider {...settings}>
+                {product.images.map((image) => {
+                  console.log(image.url)
+                  return (<div key={image._id}>
+                    <img src={image.url} alt={product.name} className='carouselImg' />
+                  </div>)
+                })}
+            
+                </Slider>
+            }
+          </div>
           
           <div className='productInfo'>
               <div className='productInfoBl-1'>

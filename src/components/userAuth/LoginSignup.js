@@ -69,13 +69,9 @@ const LoginSignup= () => {
   useEffect(()=>{
     // console.log("err",error)
     if(error){
-      if(error.extraDetails!==""){
-        toast.error(error.extraDetails)
-      }else{
-        // console.log(error)
-        toast.error(error.message)
-      }
-      
+      console.log(error)
+      toast.error(error||error.extraDetails||error.message)
+      console.log("err",error)
       dispatch(clearErrors())
     }
     if(isAuthenticated){

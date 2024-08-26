@@ -25,7 +25,7 @@ const About = () => {
             </div>
         <div>
         <h3>Why Choose Us?</h3>
-            <ul>
+            <ul className='aboutSection_ul-1'>
             <li><strong>Quality Products:</strong> We handpick each item in our catalog to ensure it meets the highest standards.</li>
             <li><strong>Diverse Categories:</strong> From electronics to fashion, home essentials to beauty products, we have something for everyone.</li>
             <li><strong>Customer-Centric Service:</strong> Your satisfaction is our priority. We strive to offer exceptional service at every step of your shopping journey.</li>
@@ -48,7 +48,7 @@ const About = () => {
             </p>
         </div>
         <h3>Connect with Me</h3>
-        <ul>
+        <ul className='aboutSection_ul-2'>
           <li><a href="[LinkedIn Profile Link]" target="_blank" rel="noopener noreferrer"><InstagramIcon/></a></li>
           <li><a href="[Twitter Profile Link]" target="_blank" rel="noopener noreferrer"><LinkedInIcon/></a></li>
           <li><a href="[Instagram Profile Link]" target="_blank" rel="noopener noreferrer"><XIcon/></a></li>

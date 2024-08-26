@@ -13,21 +13,22 @@ import SpellcheckIcon from '@mui/icons-material/Spellcheck';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import { useNavigate, useParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import Loading from '../layout/Loading/Loading'
 
 
 const UpdateProduct = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const {id}=useParams()
-    const {error, product}=useSelector(state=>state.productDetails)
+    const {error, product,loading:loadProduct}=useSelector(state=>state.productDetails)
     const { loading, error:updatedError,isUpdated } = useSelector(state => state.adminProduct)
     const categories = ['watch', 'Electronics', 'Cameras', 'Laptops', 'Accessories', 'Headphones', 'Food', 'Books', 'Clothes/Shoes', 'Beauty/Health', 'Sports', 'Outdoor', 'Home'];
-    const [name, setName] = useState(product.name)
-    const [price, setPrice] = useState(product.price)
-    const [description, setDescription] = useState(product.description)
-    const [category, setCategory] = useState(product.category)
-    const [stock, setStock] = useState(product.stock)
-    const [oldImages,setOldImages]=useState(product.images)
+    const [name, setName] = useState(product?.name)
+    const [price, setPrice] = useState(product?.price)
+    const [description, setDescription] = useState(product?.description)
+    const [category, setCategory] = useState(product?.category)
+    const [stock, setStock] = useState(product?.stock)
+    const [oldImages,setOldImages]=useState(product?.images)
     const [images, setImages] = useState([])
     const [imagesPreview, setImagesPreview] = useState([])
 
@@ -84,7 +85,7 @@ const UpdateProduct = () => {
             <MetaData title="Admin- Update Product" />
             <div className='dashboard'>
                 <Sidebar />
-                <div className='updateProductContainer'>
+                {loadProduct?<Loading/>:(<div className='updateProductContainer'>
                     <form className='updateProductForm' encType='multipart/form-data' onSubmit={submitHandler}>
                         <h1>Update The Product</h1>
                         <div>
@@ -129,7 +130,7 @@ const UpdateProduct = () => {
 
                     </form>
                 
-                </div>
+                </div>)}
             </div>
         </>
     )

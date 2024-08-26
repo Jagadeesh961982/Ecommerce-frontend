@@ -44,7 +44,6 @@ import { getCartItems } from './actions/cartActions.js';
 import NotFound from './components/layout/NotFound/NotFound.js';
 
 function App() {
-  console.log("from froneend")
   const dispatch=useDispatch();
   const baseUrl=process.env.REACT_APP_BASE_URL;
   const {isAuthenticated,loading,user}=useSelector(state=>state.userLoginRegister)

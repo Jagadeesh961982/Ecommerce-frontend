@@ -89,3 +89,53 @@
 .rightFooter a:hover{
     color: #eb4034;
 }
+
+@media screen and (max-width: 768px){
+    .leftFooter{
+        width: 25%;
+    }
+    .leftFooter h4{
+        font-size: 1vmax;
+        padding-bottom: 0.2vmax;
+    }
+    .leftFooter p{
+        font-size: 0.8vmax;
+    }
+
+    .appLogo{
+        width: 80px;
+        height: 80px;
+        margin-top: 10px;
+    }
+
+    .appLogo img{
+        width: 7vmax;
+
+    }
+
+    .middleFooter{
+        width: 50%;
+    }
+
+    .middleFooter h1{
+        font-size: 2.5vmax;
+    }
+
+    .middleFooter p{
+        font-size: 1vmax;
+    }
+
+    .rightFooter{
+        width: 25%;
+    }
+
+    .rightFooter h4{
+        font-size: 1vmax;
+        padding-bottom: 0.6vmax;
+    }
+
+    .rightFooter a{
+        font-size: 0.8vmax;
+    }
+
+}
