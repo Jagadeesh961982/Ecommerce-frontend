@@ -35,11 +35,11 @@ const UpdateProfile = () => {
         if(reader.readyState===2){
           // console.log(reader.result)
             setAvatarPreview(reader.result)
-            setAvatar(reader.result)
+            setAvatar(e.target.files[0])
 
         }
       }
-      console.log(e.target)
+      console.log(e.target.files[0])
       reader.readAsDataURL(e.target.files[0])
           
     }
@@ -47,9 +47,9 @@ const UpdateProfile = () => {
     const updateProfileHandler=(e)=>{
       e.preventDefault()
       const myForm=new FormData()
-      myForm.set("name",name)
-      myForm.set('email',email)
-      myForm.set('avatar',avatar)
+      myForm.append("name",name)
+      myForm.append('email',email)
+      myForm.append('avatar',avatar)
       dispatch(updateProfile(myForm))
     }
 

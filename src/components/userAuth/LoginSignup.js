@@ -34,14 +34,16 @@ const LoginSignup= () => {
   const switcherTab=useRef(null)
 
   const registerDataChange=(e)=>{
+    // console.log("working")
    if(e.target.name==="avatar"){
         const reader=new FileReader()
         reader.onload=()=>{
           if(reader.readyState===2){
             setAvatarPreview(reader.result)
-            setAvatar(reader.result)
+            setAvatar(e.target.files[0])
           }
       }
+      // console.log(avatar)
       reader.readAsDataURL(e.target.files[0])
    }else{
     setUser({...user,[e.target.name]:e.target.value})
@@ -58,20 +60,27 @@ const LoginSignup= () => {
 
   const signUpHandler=(e)=>{
     e.preventDefault()
+    // console.log("working")
+    // console.log("avatar",avatar,name,email,password)
     const myForm=new FormData()
-    myForm.set("name",name)
-    myForm.set('email',email)
-    myForm.set('password',password)
-    myForm.set('avatar',avatar)
+    myForm.append('name',name)
+    myForm.append('email',email)
+    myForm.append('password',password)
+    myForm.append('avatar',avatar)
     dispatch(userRegister(myForm))
   }
 
   useEffect(()=>{
+    // console.log("from loginSignup")
     // console.log("err",error)
     if(error){
-      console.log(error)
-      toast.error(error||error.extraDetails||error.message)
-      console.log("err",error)
+      if(error.extraDetails!==""){
+        toast.error(error.extraDetails)
+      }else{
+        // console.log(error)
+        toast.error(error.message)
+      }
+      
       dispatch(clearErrors())
     }
     if(isAuthenticated){

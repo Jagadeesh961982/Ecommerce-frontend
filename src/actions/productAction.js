@@ -86,6 +86,7 @@ export const createNewProduct=(productData)=>async(dispatch)=>{
             },
             withCredentials: true,
           };
+          console.log("working")
         const response=await axios.post(`${baseUrl}/api/admin/product/new`,productData,config)
         dispatch({type:NEW_PRODUCT_SUCCESS,payload:response.data})
     }catch(error){

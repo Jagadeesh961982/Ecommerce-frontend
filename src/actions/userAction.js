@@ -26,11 +26,8 @@ export const userRegister=(userData)=>async(dispatch)=>{
     try{
         dispatch({type:USER_REGISTER_REQUEST})
         // const config={Headers:{'Content-Type':'multipart/form-data'}}
-        const response=await axios.post(`${baseUrl}/api/register`,userData,{withCredentials:true,
-            headers:{
-                'Content-Type':'multipart/form-data'
-            }
-        })
+        const response=await axios.post(`${baseUrl}/api/register`,userData)
+
         dispatch({type:USER_REGISTER_SUCCESS,payload:response.data})
     }catch(error){
         // console.log(error)

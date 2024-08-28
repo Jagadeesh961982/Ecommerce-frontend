@@ -32,11 +32,11 @@ const NewProduct = () => {
     const submitHandler = (e) => {
         e.preventDefault()
         const formData = new FormData()
-        formData.set('name', name)
-        formData.set('price', price)
-        formData.set('description', description)
-        formData.set('category', category)
-        formData.set('stock', stock)
+        formData.append('name', name)
+        formData.append('price', price)
+        formData.append('description', description)
+        formData.append('category', category)
+        formData.append('stock', stock)
         images.forEach((image) => {
             formData.append("images", image);
           });
@@ -55,7 +55,7 @@ const NewProduct = () => {
             reader.onload = () => {
                 if (reader.readyState === 2) {
                     setImagesPreview((old) => [...old, reader.result]);
-                    setImages((old) => [...old, reader.result]);
+                    setImages((old) => [...old, file]);
                 }
             }
             reader.readAsDataURL(file);
