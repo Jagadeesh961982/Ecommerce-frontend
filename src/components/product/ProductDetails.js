@@ -88,9 +88,9 @@ const ProductDetails=()=>{
 
     const submitReviewHandler=()=>{
       const myForm=new FormData()
-      myForm.set("rating",rating)
-      myForm.set("comment",comment)
-      myForm.set("productId",id)
+      myForm.append("rating",rating)
+      myForm.append("comment",comment)
+      myForm.append("productId",id)
       dispatch(createNewReview(myForm))
       setOpen(false)
     }

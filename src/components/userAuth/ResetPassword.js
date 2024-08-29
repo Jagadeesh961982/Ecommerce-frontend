@@ -22,8 +22,8 @@ const ResetPassword = () => {
     const resetPasswordHandler=(e)=>{
         e.preventDefault()
         const myForm=new FormData()
-        myForm.set('password',password)
-        myForm.set('confirmPassword',confirmPassword)
+        myForm.append('password',password)
+        myForm.append('confirmPassword',confirmPassword)
         dispatch(resetPassword(token[3],myForm))
 
     }

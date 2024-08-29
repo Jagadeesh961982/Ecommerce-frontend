@@ -25,9 +25,9 @@ const UpdatePassword = () => {
     const updatePasswordHandler=(e)=>{
         e.preventDefault()
         const myForm=new FormData()
-        myForm.set('oldPassword',oldPassword)
-        myForm.set('password',password)
-        myForm.set('confirmPassword',confirmPassword)
+        myForm.append('oldPassword',oldPassword)
+        myForm.append('password',password)
+        myForm.append('confirmPassword',confirmPassword)
         dispatch(updatePassword(myForm))
         
     }
