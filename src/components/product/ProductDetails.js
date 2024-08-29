@@ -37,7 +37,7 @@ const ProductDetails=()=>{
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
-      autoplaySpeed: 2000 
+      autoplaySpeed: 1500 
     };
 
     let isOrdered;
@@ -162,7 +162,7 @@ const ProductDetails=()=>{
       <div className='productDetails'>
           <div className="carouselContainer">
             {product.images &&
-              <Slider {...settings}>
+              <Slider {...settings} className="slider">
                 {product.images.map((image) => {
                   
                   return (<div key={image._id}>

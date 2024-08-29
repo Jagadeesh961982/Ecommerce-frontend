@@ -74,13 +74,7 @@ const LoginSignup= () => {
     // console.log("from loginSignup")
     // console.log("err",error)
     if(error){
-      if(error.extraDetails!==""){
-        toast.error(error.extraDetails)
-      }else{
-        // console.log(error)
-        toast.error(error.message)
-      }
-      
+      toast.error(error || error.extraDetails)
       dispatch(clearErrors())
     }
     if(isAuthenticated){
