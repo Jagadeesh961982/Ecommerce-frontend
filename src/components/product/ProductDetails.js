@@ -119,9 +119,9 @@ const ProductDetails=()=>{
           dispatch({type:ADD_TO_CART_RESET})
           
         }
-        if(success){
-          toast.success("Review saved successfully")
-        }
+        // if(success){
+        //   toast.success("Review saved successfully")
+        // }
       dispatch(getProductDetails(id));
       dispatch(getMyorders())
     },[dispatch,id,error,reviewError,success,message]);
