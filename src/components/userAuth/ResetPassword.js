@@ -17,7 +17,7 @@ const ResetPassword = () => {
     const [confirmPassword,setConfirmPassword]=useState("")
     const token=window.location.pathname.split('/')
     const {error,loading,success}=useSelector(state=>state.forgotPassword)
-    console.log(error,loading,success)
+    // console.log(error,loading,success)
 
     const resetPasswordHandler=(e)=>{
         e.preventDefault()

@@ -45,14 +45,11 @@ export const createNewReview=(data)=>async(dispatch)=>{
     try{
         dispatch({type:NEW_REVIEW_REQUEST})
         const config = {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
             withCredentials: true,
           };
-        // console.log(data)
+        
         const response=await axios.put(`${baseUrl}/api/review`,data,config)
-        // console.log(response)
+        
         dispatch({type:NEW_REVIEW_SUCCESS,payload:response.data.success})
     }catch(error){
         dispatch({type:NEW_REVIEW_FAIL,payload:response.data.message})

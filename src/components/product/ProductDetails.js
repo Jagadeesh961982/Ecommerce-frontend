@@ -164,7 +164,7 @@ const ProductDetails=()=>{
             {product.images &&
               <Slider {...settings}>
                 {product.images.map((image) => {
-                  console.log(image.url)
+                  
                   return (<div key={image._id}>
                     <img src={image.url} alt={product.name} className='carouselImg' />
                   </div>)
