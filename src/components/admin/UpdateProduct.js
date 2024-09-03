@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { Children, useEffect, useState } from 'react'
 import './updateProduct.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { clearErrors, createNewProduct, getProductDetails, updateProduct } from '../../actions/productAction'
@@ -23,12 +23,7 @@ const UpdateProduct = () => {
     const {error, product,loading:loadProduct}=useSelector(state=>state.productDetails)
     const { loading, error:updatedError,isUpdated } = useSelector(state => state.adminProduct)
     const categories = ['watch', 'Electronics', 'Cameras', 'Laptops', 'Accessories', 'Headphones', 'Food', 'Books', 'Clothes/Shoes', 'Beauty/Health', 'Sports', 'Outdoor', 'Home'];
-    const [name, setName] = useState(product?.name)
-    const [price, setPrice] = useState(product?.price)
-    const [description, setDescription] = useState(product?.description)
-    const [category, setCategory] = useState(product?.category)
-    const [stock, setStock] = useState(product?.stock)
-    const [oldImages,setOldImages]=useState(product?.images)
+    const [productDetails, setProductDetails] = useState({name:product?.name,price:product?.price,description:product?.description,category:product?.category,stock:product?.stock,oldImages:product?.images})
     const [images, setImages] = useState([])
     const [imagesPreview, setImagesPreview] = useState([])
 
@@ -36,19 +31,22 @@ const UpdateProduct = () => {
     const submitHandler = (e) => {
         e.preventDefault()
         const formData = new FormData()
-        formData.set('name', name)
-        formData.set('price', price)
-        formData.set('description', description)
-        formData.set('category', category)
-        formData.set('stock', stock)
-        images.forEach((image) => {
+        formData.append('name', productDetails?.name)
+        formData.append('price', productDetails?.price)
+        formData.append('description',productDetails?.description)
+        formData.append('category', productDetails?.category)
+        formData.append('stock', productDetails?.stock)
+       
+        console.log("new images",images)
+        images?images.forEach((image) => {
             formData.append("images", image);
-          });
+          }):formData.append("images",[]);
+
         dispatch(updateProduct(id,formData))
     }
     const productImageChangeHandler = (e) => {
         const files = Array.from(e.target.files)
-        setOldImages([])
+        setProductDetails({...productDetails,oldImages:[]})
         setImages([])
         setImagesPreview([])
         files.forEach(file => {
@@ -56,16 +54,33 @@ const UpdateProduct = () => {
             reader.onload = () => {
                 if (reader.readyState === 2) {
                     setImagesPreview((old) => [...old, reader.result]);
-                    setImages((old) => [...old, reader.result]);
+                    setImages((old) => [...old, file]);
                 }
             }
             reader.readAsDataURL(file);
         })
+       
     }
-    useEffect(() => {
-        if(product && product._id!==id){
+
+    useEffect(()=>{
+        if(!product || product._id!==id){
             dispatch(getProductDetails(id))
         }
+    },[dispatch,id])
+    useEffect(()=>{
+        
+        if(product){
+            setProductDetails({
+                name:product.name,
+                price:product.price,
+                description:product.description,
+                category:product.category,
+                stock:product.stock,
+                oldImages:product.images
+            })
+        }
+    },[product,dispatch])
+    useEffect(() => {
         if (error) {
             toast.error(error.extraDetails||error.message)
             dispatch(clearErrors())
@@ -77,9 +92,10 @@ const UpdateProduct = () => {
         if (isUpdated?.success) {
             toast.success("Product updated successfully")
             dispatch({ type: UPDATE_PRODUCT_RESET })
+            dispatch(getProductDetails(id))
             navigate('/admin/products')
         }
-    }, [error, dispatch,navigate, updatedError,isUpdated,product,id])
+    }, [error, dispatch,navigate, updatedError,isUpdated])
     return (
         <>
             <MetaData title="Admin- Update Product" />
@@ -90,39 +106,39 @@ const UpdateProduct = () => {
                         <h1>Update The Product</h1>
                         <div>
                             <SpellcheckIcon />
-                            <input type='text' placeholder='Product Name' required value={name} onChange={e => setName(e.target.value)} />
+                            <input type='text' placeholder='Product Name' required value={productDetails.name} onChange={e => setProductDetails({...productDetails,name:e.target.value})} />
                         </div>
                         <div>
                             <AttachMoneyIcon />
-                            <input type='number' value={price} placeholder='price' required onChange={e => setPrice(e.target.value)} />
+                            <input type='number' value={productDetails.price} placeholder='price' required onChange={e => setProductDetails({...productDetails,price:e.target.value})} />
                         </div>
                         <div>
                             <DescriptionIcon />
-                            <textarea placeholder='Product Description' value={description} onChange={e => setDescription(e.target.value)} cols="30" rows="1"></textarea>
+                            <textarea placeholder='Product Description' value={productDetails.description} onChange={e => setProductDetails({...productDetails,description:e.target.value})} cols="30" rows="1"></textarea>
                         </div>
                         <div>
                             <AccountTreeIcon />
-                            <select value={category} onChange={e => setCategory(e.target.value)}>
+                            <select value={productDetails.category} onChange={e => setProductDetails({...productDetails,category:e.target.value})}>
                                 <option value=''>Select Category</option>
-                                {categories.map(category => (
-                                    <option key={category} value={category}>{category}</option>
+                                {categories.map(cat => (
+                                    <option key={cat} value={cat}>{cat}</option>
                                 ))}
                             </select>
                         </div>
                         <div>
                             <StorageIcon />
-                            <input type='number'value={stock} placeholder='stock' required onChange={e => setStock(e.target.value)} />
+                            <input type='number' value={productDetails.stock} placeholder='stock' required onChange={e => setProductDetails({...productDetails,stock:e.target.value})} />
                         </div>
                         <div id='updateProductFormFile'>
                             <input type='file' name='avatar' accept='image/*' onChange={productImageChangeHandler} multiple />
                         </div>
                         <div id="updateProductFormImage">
-                            {oldImages && oldImages.map((image, ind) => (
+                            {productDetails.oldImages && productDetails.oldImages.map((image, ind) => (
                                 <img key={ind} src={image.url} alt='Product avatar' />
                             ))}
                         </div>
                         <div id="updateProductFormImage">
-                            {images && images.map((image, ind) => (
+                            {imagesPreview && imagesPreview.map((image, ind) => (
                                 <img key={ind} src={image} alt='Product avatar' />
                             ))}
                         </div>
