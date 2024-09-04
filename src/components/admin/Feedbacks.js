@@ -81,7 +81,7 @@ const Feedbacks = () => {
                 <DataGrid 
                   columns={columns}
                   rows={rows}
-                  pageSize={10}
+                  pageSizeOptions={[10, 100, { value: 1000, label: '1,000' }]}
                   disableSelectionOnClick
                   className='feedbackTable'
                   autoHeight

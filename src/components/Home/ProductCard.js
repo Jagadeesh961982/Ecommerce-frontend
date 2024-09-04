@@ -13,12 +13,12 @@ const productCard = (product) => {
     };
     return (
         <Link to={`/product/${product._id}`} className='productCard'>
-            <img src={product.images[0].url} alt={product.name} style={{objectFit:"cover",width:"100%",height:"100%"}}/>
-            <p>{product.name}</p>
+            <img src={product?.images[0]?.url} alt={product?.name} style={{objectFit:"cover",width:"100%",height:"100%"}}/>
+            <p>{product?.name}</p>
             <div>
-                <Rating {...options} /> <span className='productCardSpan'>({product.numOfReviews} Reviews)</span>
+                <Rating {...options} /> <span className='productCardSpan'>({product?.numOfReviews} Reviews)</span>
             </div>
-            <span>₹{product.price}</span>
+            <span>₹{product?.price}</span>
         </Link>
     );
 };
