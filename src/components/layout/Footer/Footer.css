@@ -91,11 +91,6 @@
 }
 
 @media screen and (max-width: 768px){
-    .footer{
-        position: fixed;
-        width: 100%;
-        bottom: 0;
-    }
     .leftFooter{
         width: 25%;
     }

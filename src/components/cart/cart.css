@@ -126,6 +126,9 @@
 }
 
 @media  screen and (max-width: 768px){
+    .cartEmpty{
+        height: 74vh;
+    }
     .cartHeader{
         display: none;
     }

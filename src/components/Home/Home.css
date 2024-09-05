@@ -75,8 +75,8 @@
 }
 
 .productCard{
-    width: 14vmax;
-    height: 20vmax;
+    width: 15vmax;
+    height: 25vmax;
     display: flex;
     flex-direction: column;
     text-decoration: none;
@@ -125,6 +125,10 @@
 }
 
 @media  screen and (max-width: 768px) {
+    .productCard{
+        width: 14vmax;
+        height: 25vmax;
+    }
     .productCard > p{
         overflow: hidden;
         white-space: nowrap;
@@ -142,8 +146,8 @@
     .productCard div span{
         font-size:0 0.5vmax;
     }
-    .productCard:hover{
+    .productCard{
         box-shadow: 0 0 5px rgba(15,15,15,0.26);
-        transform: translateY(-1vmax);
+        /* transform: translateY(-1vmax); */
     }
 }
