@@ -137,15 +137,21 @@
     }
     .productCard div{
         margin: 0vmax;
-        display: block;
+        display: flex;
+
     }
    
-    .productCard span{
+    .productCard > div>span:first-child{
         font-size: 1.5vmax;
     }
-    .productCard div span{
-        font-size:0 0.5vmax;
+
+    .productCardSpan{
+        overflow: hidden;
+        font-size: 1vmax;
     }
+    /* .productCard div span{
+        font-size:0 0.5vmax;
+    } */
     .productCard{
         box-shadow: 0 0 5px rgba(15,15,15,0.26);
         /* transform: translateY(-1vmax); */
