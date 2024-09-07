@@ -75,7 +75,7 @@
 }
 
 .productCard{
-    width: 15vmax;
+    width: 14vmax;
     height: 25vmax;
     display: flex;
     flex-direction: column;
