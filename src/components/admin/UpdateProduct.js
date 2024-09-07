@@ -37,7 +37,7 @@ const UpdateProduct = () => {
         formData.append('category', productDetails?.category)
         formData.append('stock', productDetails?.stock)
        
-        console.log("new images",images)
+        // console.log("new images",images)
         images?images.forEach((image) => {
             formData.append("images", image);
           }):formData.append("images",[]);
@@ -101,7 +101,7 @@ const UpdateProduct = () => {
             <MetaData title="Admin- Update Product" />
             <div className='dashboard'>
                 <Sidebar />
-                {loadProduct?<Loading/>:(<div className='updateProductContainer'>
+                {loading ?<Loading/>:(<div className='updateProductContainer'>
                     <form className='updateProductForm' encType='multipart/form-data' onSubmit={submitHandler}>
                         <h1>Update The Product</h1>
                         <div>
