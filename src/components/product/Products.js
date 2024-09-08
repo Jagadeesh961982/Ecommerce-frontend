@@ -10,9 +10,7 @@ import Pagination from 'react-js-pagination';
 import Slider from '@mui/material/Slider';
 import { Typography } from '@mui/material'
 import MetaData from '../layout/MetaData.js'
-import ProductFilter from './ProductFilter.js'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 
