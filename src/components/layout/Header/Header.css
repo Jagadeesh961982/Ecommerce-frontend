@@ -12,3 +12,14 @@
     height: 56px;
     border-radius: 100%;
 }
+
+@media screen and (max-width: 768px){
+    .speedDial{
+        right: 1vmax;
+        top: 1vmax;
+    }
+    .speedDialIcon{
+        object-fit: cover;
+    }   
+    
+}
