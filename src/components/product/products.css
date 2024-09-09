@@ -15,7 +15,7 @@
     top: 0;
     background-color: white;
     z-index: 2;
-    /* width: 15vmax; */
+    /* width: 100%; */
 }
 
 .productsPage{
@@ -25,7 +25,7 @@
 }
 
 .productsPage-1{
-    width: 18%;
+    width: 17%;
     height: 100vh;
     position: sticky;
     top: 5vmax; 
@@ -41,6 +41,9 @@
     text-align: center;
 }
 
+.productsPage-2{
+    width: 83%;
+}
 
 .filterBox{
     display: flex;
@@ -54,10 +57,11 @@
     padding-left: 6px;
 }
 
-.MuiTypography-root{
+.filterBox > div:nth-child(2) > p{
     display: flex;
     align-items: center;
 }
+
 .categoryBox{
     display: flex;
     flex-direction: column;
@@ -83,13 +87,15 @@
 }
 
 .productsContainer{
+    
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    width: 80vw;
-    max-width: 100%;
+    width: 100%;
+    /* width: 80vw;
+    max-width: 100%; */
     min-height: 70vh;
 
 }
@@ -155,7 +161,15 @@
     .productsPage-1 > div {
         font-size: 1vmax;
     }
-    
+    .productsContainer{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, auto);
+        justify-items: center;
+        align-items: center;
+
+    }
+
     .filterBox{
         width: 20vmax;
         position: static;

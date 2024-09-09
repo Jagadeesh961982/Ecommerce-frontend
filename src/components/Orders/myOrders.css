@@ -93,6 +93,7 @@ width: 100vw;
     .myOrdersPage {
         padding: 0;
         height: 93vh;
+        width: 100%;
       }
     
       #myOrdersHeading {

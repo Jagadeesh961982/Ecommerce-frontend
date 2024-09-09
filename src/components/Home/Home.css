@@ -125,9 +125,26 @@
 }
 
 @media  screen and (max-width: 768px) {
+    .banner{
+        height: 30vh;
+    }
+    .banner > p{
+        margin-top: 3vmax;
+        font-size: 1.2vmax;
+    }
+
+    .banner h1{
+        font-size: 2vmax;
+    }
+
+    .banner::after{
+        clip-path: none;
+        background-color: transparent;
+    }
     .productCard{
         width: 14vmax;
         height: 25vmax;
+        margin-right: 1vmax;
     }
     .productCard > p{
         overflow: hidden;

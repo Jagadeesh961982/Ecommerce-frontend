@@ -51,6 +51,15 @@
     margin-right: 0.5rem;
 }
 
+@media screen and (max-width: 600px){
+    .sidebar{
+        /* display: none; */
+        width: 100%;
+    }
+
+    
+}
+
 /* .adminDashboard > div:first-child{
     
     display: flex;
