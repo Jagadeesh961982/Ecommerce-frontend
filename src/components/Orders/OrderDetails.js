@@ -38,15 +38,15 @@ const OrderDetails = () => {
                         <Typography>Shipping Info</Typography>
                         <div className='orderDetailsContainerBox'>
                             <div>
-                                <p>Name:</p>
-                                <span>{orderDetails?.user.name}</span>
+                                <p>Name: </p>
+                                <span>{orderDetails?.user?.name}</span>
                             </div>
                             <div>
-                                <p>Phone</p>
+                                <p>Phone: </p>
                                 <span>{orderDetails?.shippingInfo?.phoneNo}</span>
                             </div>
                             <div>
-                                <p>Address</p>
+                                <p>Address: </p>
                                 <span>{`${orderDetails?.shippingInfo?.address},${orderDetails?.shippingInfo?.city},${orderDetails?.shippingInfo?.state},${orderDetails?.shippingInfo?.pincode},${orderDetails?.shippingInfo?.country}`}</span>
                             </div>
                         </div>
