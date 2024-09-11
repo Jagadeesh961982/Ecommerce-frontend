@@ -72,6 +72,9 @@
 }
 
 @media screen and (max-width:660px) {
+    .orderDetailsPage{
+        min-height: 100vh;
+    }
     .orderDetailsContainer h1{
         font-size: 2vmax;
     }

@@ -1,3 +1,21 @@
+.loadMore{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5vmax auto;
+}
+.loadMore a{
+    text-decoration: none;
+    padding: 1vmax 2vmax;
+    border: none;
+    border-radius: 5px;
+    background-color: tomato;
+    color: white;
+    font: 500 1vmax "Roboto", sans-serif;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
 .banner{
     background-image: url("../../images/cover.jfif");
     background-size: cover;
@@ -125,6 +143,9 @@
 }
 
 @media  screen and (max-width: 768px) {
+    .homePage{
+        min-height: 100vh;
+    }
     .banner{
         height: 30vh;
     }

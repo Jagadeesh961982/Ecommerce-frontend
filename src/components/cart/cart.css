@@ -126,6 +126,9 @@
 }
 
 @media  screen and (max-width: 768px){
+    .cartContainerHome{
+        min-height: 100vh;
+    }
     .cartEmpty{
         height: 74vh;
     }
