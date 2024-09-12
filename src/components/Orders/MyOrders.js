@@ -65,17 +65,18 @@ const MyOrders = () => {
         </div> :
         <div className='myOrdersPage'>
           <h1 className='ordersHeading'>MY ORDERS</h1>
-          <DataGrid 
-              rows={rows}
-              columns={columns}
-              pageSizeOptions={[10, 100, { value: 1000, label: '1,000' }]}
-              disableSelectionOnClick 
-              className='myOrdersTable'
-              autoHeight
-             
-              // checkboxSelection
-             
-          />
+          <div className='myOrdersTable'>
+            {orders && orders.map((order)=>(
+              order?.orderItems?.map((item)=>(
+                <Link to={`/orders/${order._id}`} key={item.product} className='order'>
+                  <img src={item.image} alt={item.name} />
+                  <p>{item.quantity*item.price}</p>
+                  <p>Delivery Status <br/> <b>{order.orderStatus}</b></p>
+                </Link>
+              ))
+            ))
+
+            }</div>
           <Typography id="myordersHeading">{user?.user?.name}'s orders</Typography>
         </div>
       )}
@@ -85,3 +86,16 @@ const MyOrders = () => {
 }
 
 export default MyOrders
+
+
+{/* <DataGrid 
+  rows={rows}
+  columns={columns}
+  pageSizeOptions={[10, 100, { value: 1000, label: '1,000' }]}
+  disableSelectionOnClick 
+  className='myOrdersTable'
+  autoHeight
+  
+  // checkboxSelection
+  
+/> */}
