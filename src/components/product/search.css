@@ -1,4 +1,31 @@
 .searchBox{
+    height: 6vmax;
+}
+
+.searchBox input[type="text"]{
+    height: 3vmax;
+    width: 70%;
+    background-color: rgb(223, 217, 217);
+    border: none;
+    padding-left: 1vmax;
+    border-radius: 5px;
+    
+}
+
+.searchBox input[type="submit"]{
+    height: 3vmax;
+    width: 20%;
+    background-color: tomato;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.searchBox input:hover{
+    cursor: pointer;
+}
+
+/* .searchBox{
     width: 100vw;
     max-width: 100%;
     height: 100vh;
@@ -42,4 +69,4 @@
 }
 .searchBox input[type="submit"]:hover{
     background-color: rgb(48, 49, 49);
-}
+} */

@@ -70,7 +70,7 @@ function App() {
   return (
     <Router>
       <Header />
-      {isAuthenticated && <UserOptions user={user.user} items={cartItems}/>}
+      {/* {isAuthenticated && <UserOptions user={user.user} items={cartItems}/>} */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/product/:id" element={<ProductDetails />} />
