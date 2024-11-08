@@ -21,7 +21,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vmin;
+    height: 90vmin;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -63,9 +63,9 @@
     height:100vmin;
     background-color: #ffffff;
     position: absolute;
-    top:0%;
+    top:0;
     left:0;
-    clip-path: polygon(100% 68%, 0 100%, 100% 100%);
+    clip-path: polygon(100% 68%, 100% 100%, 100% 100%);
     max-width: 100%;
 }
 

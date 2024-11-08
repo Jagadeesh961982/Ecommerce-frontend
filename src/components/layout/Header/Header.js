@@ -61,6 +61,8 @@ const Header = () => {
       <Search />
       {isAuthenticated && <UserOptions user={user.user} items={cartItems}/>}
     </div>);
+
+
 };
 
 export default Header;
