@@ -5,7 +5,7 @@
     border-left: 1px solid rgba(0, 0, 0, 0.158);
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
   }
   .newProductHeading h1 {
     color: rgba(0, 0, 0, 0.733);
@@ -21,7 +21,7 @@
     padding: 3vmax;
     justify-content: space-evenly;
     height: 70%;
-    width: 40vh;
+    width: 50vW;
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.267);
   }
