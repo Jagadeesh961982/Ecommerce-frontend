@@ -22,7 +22,7 @@ const ProductList = () => {
 
   const columns = [
     {field :"id",headerName:"Product Id",minWidth:200,flex:0.5},
-    {field :"name",headerName:"Name",minWidth:350,flex:1},
+    {field :"name",headerName:"Name",minWidth:300,flex:1},
     {field :"stock",headerName:"Stock",type:"number",minWidth:150,flex:0.3},
     {field :"price",headerName:"Price",type:"number",minWidth:270,flex:0.5},
     {field : "actions",headerName:"Actions",type:"number",minWidth:150,flex:0.3,sortable:false,
