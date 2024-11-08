@@ -52,6 +52,7 @@ function App() {
   const getStripeApiKey=async()=>{
    
     try{
+      console.log(baseUrl)
       const {data}=await axios.get(`${baseUrl}/api/stripeapikey`,{withCredentials:true})
       setStripeApiKey(data.stripeApiKey)
     }catch(err){
@@ -70,7 +71,7 @@ function App() {
   return (
     <Router>
       <Header />
-      {isAuthenticated && <UserOptions user={user.user} items={cartItems}/>}
+      {/* {isAuthenticated && <UserOptions user={user.user} items={cartItems}/>} */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/product/:id" element={<ProductDetails />} />

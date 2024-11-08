@@ -23,7 +23,7 @@ const Search = () => {
     <>  
         <MetaData title={'Search Products --Ecommerce'} />
         <form className='searchBox' onSubmit={SearchSubmitHandler}>
-            <input type='text' placeholder='Search a product...' onChange={e=>setKeyword(e.target.value)}/>
+            <input type='text' placeholder='Search for products...' onChange={e=>setKeyword(e.target.value)}/>
             <input type='submit' value='Search'/>
         </form>
 

@@ -4,6 +4,10 @@ import logo from "../../../images/logo.png";
 import { IoSearch } from "react-icons/io5";
 import { FaShoppingCart } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
+import Search from "../../product/Search";
+import "./Header.css";
+import { useSelector } from "react-redux";
+import UserOptions from "./UserOptions";
 
 const options = {
   burgerColorHover: "#eb4034",
@@ -49,7 +53,15 @@ const options = {
 };
 
 const Header = () => {
-  return <ReactNavbar {...options}/>;
+  const {isAuthenticated,loading,user}=useSelector(state=>state.userLoginRegister)
+  const {cartItems}=useSelector(state=>state.allCartItems)
+  return (
+    <div className="header">
+      <ReactNavbar {...options}/>
+      <Search />
+      {isAuthenticated && <UserOptions user={user.user} items={cartItems}/>}
+    </div>);
+
 };
 
 export default Header;
