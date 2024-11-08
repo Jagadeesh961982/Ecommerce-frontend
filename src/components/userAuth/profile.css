@@ -31,7 +31,7 @@
   .profileContainer > div:first-child > img {
     width: 20vmax;
     height: 20vmax;
-    border-radius: 100%;
+    border-radius: 50%;
     transition: all 0.5s;
   }
   
@@ -99,6 +99,7 @@
   @media screen and (max-width: 600px) {
     .profileContainer {
       flex-direction: column;
+      width: 100%;
     }
   
     .profileContainer > div:first-child > h1 {

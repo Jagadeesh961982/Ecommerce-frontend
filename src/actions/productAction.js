@@ -118,10 +118,11 @@ export const updateProduct=(id,productData)=>async(dispatch)=>{
             },
             withCredentials: true,
           };
-        for(var pair of productData.entries()) {
-            console.log(pair[0]+ ', '+ pair[1]); 
-         }
+        // for(var pair of productData.entries()) {
+        //     console.log(pair[0]+ ', '+ pair[1]); 
+        //  }
         const response=await axios.put(`${baseUrl}/api/admin/product/${id}`,productData,config)
+        console.log("updated")
         dispatch({type:UPDATE_PRODUCT_SUCCESS,payload:response.data})
     }catch(error){
         dispatch({type:UPDATE_PRODUCT_FAIL,payload:error.response.data.message})

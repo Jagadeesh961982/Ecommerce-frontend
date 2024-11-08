@@ -1,3 +1,21 @@
+.loadMore{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5vmax auto;
+}
+.loadMore a{
+    text-decoration: none;
+    padding: 1vmax 2vmax;
+    border: none;
+    border-radius: 5px;
+    background-color: tomato;
+    color: white;
+    font: 500 1vmax "Roboto", sans-serif;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
 .banner{
     background-image: url("../../images/cover.jfif");
     background-size: cover;
@@ -76,7 +94,7 @@
 
 .productCard{
     width: 14vmax;
-    height: 20vmax;
+    height: 25vmax;
     display: flex;
     flex-direction: column;
     text-decoration: none;
@@ -125,6 +143,30 @@
 }
 
 @media  screen and (max-width: 768px) {
+    .homePage{
+        min-height: 100vh;
+    }
+    .banner{
+        height: 30vh;
+    }
+    .banner > p{
+        margin-top: 3vmax;
+        font-size: 1.2vmax;
+    }
+
+    .banner h1{
+        font-size: 2vmax;
+    }
+
+    .banner::after{
+        clip-path: none;
+        background-color: transparent;
+    }
+    .productCard{
+        width: 14vmax;
+        height: 25vmax;
+        margin-right: 1vmax;
+    }
     .productCard > p{
         overflow: hidden;
         white-space: nowrap;
@@ -133,17 +175,23 @@
     }
     .productCard div{
         margin: 0vmax;
-        display: block;
+        display: flex;
+
     }
    
-    .productCard span{
+    .productCard > div>span:first-child{
         font-size: 1.5vmax;
     }
-    .productCard div span{
-        font-size:0 0.5vmax;
+
+    .productCardSpan{
+        overflow: hidden;
+        font-size: 1vmax;
     }
-    .productCard:hover{
+    /* .productCard div span{
+        font-size:0 0.5vmax;
+    } */
+    .productCard{
         box-shadow: 0 0 5px rgba(15,15,15,0.26);
-        transform: translateY(-1vmax);
+        /* transform: translateY(-1vmax); */
     }
 }

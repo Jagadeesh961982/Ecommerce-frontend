@@ -10,6 +10,7 @@ width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: auto;
 
 }
 
@@ -22,6 +23,7 @@ width: 100vw;
 
 .myOrdersTable{
     background-color: white;
+
 }
 
 .myOrdersTable div{
@@ -47,6 +49,23 @@ width: 100vw;
     color: rgb(255,255,255);
     transition: all 0.5s;
     background-color: rgb(44,44,44);
+}
+
+.order{
+    text-decoration: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1vmax;
+    margin-bottom: 5px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.order img{
+    flex: start;
+    width: 10vmax;
+    height: 10vmax;
 }
 
 .MuiDataGrid-columnHeader{
@@ -91,22 +110,32 @@ width: 100vw;
     .myOrdersPage {
         padding: 0;
         height: 93vh;
+        width: 100%;
       }
     
-      #myOrdersHeading {
+    #myOrdersHeading {
         font: 400 2.2vmax "Roboto";
         padding: 4vw;
       }
     
-      .myOrdersTable div {
+    .myOrdersTable div {
         font: 300 4vw "Roboto";
       }
+
+    .order{
+        font-size: 1.5vmax;
+    }
     
-      .MuiDataGrid-columnHeader {
+    .order img{
+        width: 7vmax;
+        height: 7vmax;
+    }
+    
+    .MuiDataGrid-columnHeader {
         padding: 20px !important;
       }
     
-      .MuiDataGrid-columnHeader div {
+    .MuiDataGrid-columnHeader div {
         font: 500 5vw "Roboto" !important;
       }
 }

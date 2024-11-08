@@ -6,6 +6,7 @@ import MetaData from '../layout/MetaData'
 import { Button } from '@mui/material'
 import Sidebar from './Sidebar'
 import { NEW_PRODUCT_RESET } from '../../constants/productConstants'
+import Loading from '../layout/Loading/Loading.js'
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import DescriptionIcon from '@mui/icons-material/Description';
 import StorageIcon from '@mui/icons-material/Storage';
@@ -81,6 +82,7 @@ const NewProduct = () => {
             <MetaData title="Admin- New Product" />
             <div className='dashboard'>
                 <Sidebar />
+                {loading ? <Loading /> :
                 <div className='newProductContainer'>
                     <form className='newProductForm' encType='multipart/form-data' onSubmit={submitHandler}>
                         <h1>Create New Product</h1>
@@ -122,6 +124,7 @@ const NewProduct = () => {
                     </form>
                 
                 </div>
+                }
             </div>
         </>
     )
