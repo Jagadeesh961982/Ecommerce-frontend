@@ -8,7 +8,7 @@ import Search from "../../product/Search";
 import "./Header.css";
 import { useSelector } from "react-redux";
 import UserOptions from "./UserOptions";
-
+import { useNavigate } from "react-router-dom";
 const options = {
   burgerColorHover: "#eb4034",
   logo,
@@ -53,12 +53,14 @@ const options = {
 };
 
 const Header = () => {
+  const navigate=useNavigate()
   const {isAuthenticated,loading,user}=useSelector(state=>state.userLoginRegister)
   const {cartItems}=useSelector(state=>state.allCartItems)
   return (
     <div className="header">
-      <ReactNavbar {...options}/>
+      <ReactNavbar {...options} />
       <Search />
+      {/*<div onClick={()=>navigate("/contact")}>Contact Us</div>*/}
       {isAuthenticated && <UserOptions user={user.user} items={cartItems}/>}
     </div>);
 

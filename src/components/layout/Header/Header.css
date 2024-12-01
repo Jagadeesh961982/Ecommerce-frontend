@@ -1,3 +1,4 @@
+
 .header{
     margin-bottom: 7vmax;
     top: 0;
@@ -14,6 +15,10 @@
     position: fixed;
 }
 
+.header ReactNavbar{
+    z-index: -10;
+}
+
 .header .searchBox{
     display: flex;
     align-items: center;
@@ -28,10 +33,14 @@
 
 
 }
+
+.MuiButtonBase-root{
+    width: 5vmax;
+    height: 5vmax;
+}
 .speedDialIcon{
-    width: 56px;
-    height: 56px;
-    border-radius: 100%;
+    width: 5vmax;
+    height: 5vmax;
     border-radius: 50%;
 
 }

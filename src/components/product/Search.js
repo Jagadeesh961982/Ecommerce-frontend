@@ -11,6 +11,7 @@ const Search = () => {
         e.preventDefault();
 
         if(keyword.trim()){
+            setKeyword("") 
             navigate(`/products/${keyword}`);
         }
         else{
