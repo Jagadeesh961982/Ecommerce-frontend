@@ -31,7 +31,7 @@ const Home=()=>{
         slidesToShow: slidesToShow,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 1500 ,
+        // autoplaySpeed: 1500 ,
         lazyLoad: 'ondemand'
       };
     useEffect(() => {
