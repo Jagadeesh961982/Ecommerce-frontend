@@ -18,9 +18,9 @@ const Home=()=>{
 
     const updateSlidesToShow = () => {
         if (window.innerWidth > 660) {
-          setSlidesToShow(4);
+          setSlidesToShow(5);
         } else {
-          setSlidesToShow(2);
+          setSlidesToShow(3);
         }
       };
     // console.log(products,loading,productCount);
