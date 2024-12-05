@@ -14,7 +14,7 @@ const Home=()=>{
     const response=useSelector(state=>state.products);
     // console.log(response);
     const {products,productCount,loading}=response;
-    const [slidesToShow,setSlidesToShow]=useState(4);
+    const [slidesToShow,setSlidesToShow]=useState(5);
 
     const updateSlidesToShow = () => {
         if (window.innerWidth > 660) {
