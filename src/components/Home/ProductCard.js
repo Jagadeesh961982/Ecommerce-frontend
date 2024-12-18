@@ -13,7 +13,7 @@ const productCard = (product) => {
     };
     return (
         <Link to={`/product/${product._id}`} className='productCard'>
-            <img src={product?.images[0]?.url} alt={product?.name} style={{objectFit:"cover",width:"100%"}}/>
+            <img src={product?.images[0]?.url} alt={product?.name} style={{objectFit:"contain",width:"90%"}}/>
             <p>{product?.name}</p>
             <div>
                 <Rating {...options} /> <span className='productCardSpan'>({product?.numOfReviews} Reviews)</span>
