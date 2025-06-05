@@ -18,7 +18,7 @@ const Contact = () => {
     const feedBackSubmitHandler=(e)=>{
         e.preventDefault()
         const data={"id":user?.user?._id,"message":message}
-        console.log({data})
+        // console.log({data})
         dispatch(submitFeedback(data))
     }
     useEffect(()=>{
