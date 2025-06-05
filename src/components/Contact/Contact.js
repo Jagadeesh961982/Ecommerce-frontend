@@ -17,10 +17,9 @@ const Contact = () => {
     const [message,setMessage]=useState('')
     const feedBackSubmitHandler=(e)=>{
         e.preventDefault()
-        const myForm=new FormData()
-        myForm.append('id',user?.user?._id)
-        myForm.append('message',message)
-        dispatch(submitFeedback(myForm))
+        const data={"id":user?.user?._id,"message":message}
+        console.log({data})
+        dispatch(submitFeedback(data))
     }
     useEffect(()=>{
         if(error){

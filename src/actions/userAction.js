@@ -123,10 +123,10 @@ export const resetPassword=(token,passwords)=>async(dispatch)=>{
 export const submitFeedback=(feedbackData)=>async(dispatch)=>{
     try{
         dispatch({type:SUBMIT_FEEDBACK_REQUEST})
-        // console.log("working")
+        console.log(feedbackData)
         const response=await axios.put(`${baseUrl}/api/feedback`,feedbackData,{withCredentials:true,
             headers:{
-                'Content-Type':'multipart/form-data'
+                'Content-Type':"application/json"
             }
         })
         dispatch({type:SUBMIT_FEEDBACK_SUCCESS,payload:response.data})
