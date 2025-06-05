@@ -129,9 +129,11 @@ export const submitFeedback=(feedbackData)=>async(dispatch)=>{
                 'Content-Type':"application/json"
             }
         })
+        // console.log(response)
         dispatch({type:SUBMIT_FEEDBACK_SUCCESS,payload:response.data})
     }catch(error){
-        dispatch({type:SUBMIT_FEEDBACK_FAIL,payload:error.response.data.message})
+        // console.log(response)
+        dispatch({type:SUBMIT_FEEDBACK_FAIL,payload:error.response?.data.message})
     }
 }
 
